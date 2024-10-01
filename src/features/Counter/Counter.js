@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import './Counter.css';
 
 /**
  * @typedef {import('./types').CounterProps} CounterProps
@@ -11,8 +11,7 @@ import { useState } from 'react';
  */
 
 export const Counter = (props) => {
-  const { startCount, minCount, maxCount } = props;
-  const [count, setCount] = useState(startCount);
+  const { minCount, maxCount, count, setCount } = props;
 
   const handleCountDownClick = () => {
     if (count <= minCount) return;
@@ -25,19 +24,19 @@ export const Counter = (props) => {
   };
 
   return (
-    <div className="counter">
+    <div className={'counter'}>
       <h2>Counter: {count}</h2>
-      <button
+      <button className={'button'}
         disabled={count <= minCount}
         onClick={handleCountDownClick}
       >
-        -
+        Down
       </button>
-      <button
+      <button className={'button'}
         disabled={count >= maxCount}
         onClick={handleCountUpClick}
       >
-        +
+        Up
       </button>
     </div>
   );
