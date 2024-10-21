@@ -26,5 +26,6 @@
   },
   "include": [
     "src",
-  ]
+    "global.ts"
+, "_notes/Posts", "_notes/ListPosts"  ]
 }
