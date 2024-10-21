@@ -1,8 +1,0 @@
-.card {
-    display: block;
-    width: fit-content;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(230, 226, 226, 0.7)
-};
