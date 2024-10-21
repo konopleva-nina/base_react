@@ -13,9 +13,6 @@ import style from './Counter.module.scss';
 export const Counter = (props) => {
   const { count, setCount, name, resetCount } = props;
 
-  //опциональная цепочка, замыкается на undefined или null
-  // оператор ИЛИ если тру или фолс, возвращает тру, если фолс или фолс возвращает первый фолс
-  // оператор И возвращает последний фолс
   const minCount = props.minCount ? props.minCount : 0;
   const maxCount = props.maxCount ? props.maxCount : 20;
 
