@@ -1,2 +1,4 @@
-export { Counter } from './Counter';
-export { Cards } from './Cards';
+export { Photos } from './Photos';
+export { Todos } from './Todos';
+export { PhotosCounter } from './PhotosCounter';
+export { TodosCounter } from './TodosCounter';
