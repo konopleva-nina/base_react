@@ -2,21 +2,21 @@ import { create } from 'zustand';
 import { API_BASE_URL } from 'shared/config';
 
 /**
- * @typedef {import('./types').TodosStateCreator} StateCreator
- * @typedef {import('./types').TodosState} State
+ * @typedef {import('./types').TodosStoreCreator} StoreCreator
+ * @typedef {import('./types').TodosStore} Store
 */
 
-export const useTodos = create(/**@type {StateCreator} */ (set) => ({
+export const useTodos = create(/**@type {StoreCreator} */ (set) => ({
   /*State for count */
   todoCount: 0,
-  setTodoCount: (todoCount) => set((/**@type {State} */ state) => ({ ...state, todoCount })),
+  setTodoCount: (todoCount) => set((/**@type {Store} */ store) => ({ ...store, todoCount })),
   /*State for todos */
   todos: [],
   isTodosLoading: false,
   todosErrorMessage: '',
   getTodos: async (count) => {
     try {
-      set(() => ({ isTodosLoading: true }));
+      set((/**@type {Store} */ store) => ({ ...store, isTodosLoading: true }));
       const endPoint = `todos?_start=0&_limit=${count}`;
       const response = await fetch(`${API_BASE_URL}/${endPoint}`);
       if (!response.ok) throw new Error('Todos not received');
@@ -24,9 +24,10 @@ export const useTodos = create(/**@type {StateCreator} */ (set) => ({
       set(() => ({ todos: todosFromAPI }));
     } catch (/**@type {*}*/ error) {
       set(() => ({ todosErrorMessage: error.message }));
+    } finally {
+      set((/**@type {Store} */ store) => ({ ...store, isTodosLoading: false }));
     };
-    set(() => ({ isTodosLoading: false }));
   },
 
-  resetTodos: () => set((/**@type {State} */ state) => ({ ...state, todos: [] })),
+  resetTodos: () => set((/**@type {Store} */ store) => ({ ...store, todos: [] })),
 }));
