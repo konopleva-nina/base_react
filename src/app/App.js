@@ -1,5 +1,7 @@
-import { Counter } from 'features/index';
-import './App.css';
+import style from './App.module.scss';
+import { useEffect } from 'react';
+import { usePhotos, useTodos } from 'shared/hooks';
+import { Gallery, Tasks } from 'widgets';
 
 /**
  * @typedef {import('./types').AppProps} AppProps
@@ -11,15 +13,21 @@ import './App.css';
  * @returns {JSX.Element}
  */
 
-export const App  = (props) => {
+export const App = (props) => {
+  const defaultCount = 5;
+  const photosState = usePhotos();
+  const todosState = useTodos();
+
+  useEffect(() => {
+    photosState.setPhotoCount(defaultCount);
+    todosState.setTodoCount(defaultCount);
+  }, []);
+
   return (
-    <div className="app">
+    <div className={style.app}>
       <h1>{props.name}</h1>
-      <Counter
-        minCount={0}
-        startCount={0}
-        maxCount={10}
-      />
+      <Gallery />
+      <Tasks />
     </div>
   );
 };
