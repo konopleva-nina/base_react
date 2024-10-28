@@ -5,4 +5,5 @@ export type CounterProps = {
   maxCount: number;
   setCount: (count: number) => void;
   resetCount: () => void;
+  isDisabled: boolean;
 };

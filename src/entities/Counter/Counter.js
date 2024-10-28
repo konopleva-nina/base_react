@@ -11,7 +11,7 @@ import style from './Counter.module.scss';
  */
 
 export const Counter = (props) => {
-  const { count, setCount, name, resetCount } = props;
+  const { name, count, setCount, resetCount, isDisabled } = props;
 
   const minCount = props.minCount ? props.minCount : 0;
   const maxCount = props.maxCount ? props.maxCount : 20;
@@ -37,21 +37,21 @@ export const Counter = (props) => {
       <h2 className={style.title}>{name}: {count}</h2>
       {/*Down*/}
       <button className={style.button}
-        disabled={count <= minCount}
+        disabled={isDisabled || count <= minCount}
         onClick={handleCountDownClick}
       >
         Down
       </button>
       {/*Up*/}
       <button className={style.button}
-        disabled={count >= maxCount}
+        disabled={isDisabled || count >= maxCount}
         onClick={handleCountUpClick}
       >
         Up
       </button>
       {/*Reset*/}
       <button className={style.button}
-        disabled={!count}
+        disabled={isDisabled || !count}
         onClick={handleResetClick}
       >
         Reset
