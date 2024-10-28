@@ -1,5 +1,5 @@
 import style from './Card.module.scss';
-import { getRandomColor } from 'shared/ui/getRandomColor';
+import { getRandomColor } from 'shared/utils/getRandomColor';
 
 /**
  * @typedef {import('./types').CardDetails} CardDetails
