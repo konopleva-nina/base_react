@@ -5,21 +5,21 @@ import { create } from 'zustand';
 import { API_BASE_URL } from 'shared/config';
 
 /**
- * @typedef {import('./types').PhotosStateCreator} StateCreator
- * @typedef {import('./types').PhotosState} State
+ * @typedef {import('./types').PhotosStoreCreator} StoreCreator
+ * @typedef {import('./types').PhotosStore} Store
 */
 
-export const usePhotos = create(/**@type {StateCreator} */ (set) => ({
+export const usePhotos = create(/**@type {StoreCreator} */ (set) => ({
   /*State for coun,t */
   photoCount: 0,
-  setPhotoCount: (photoCount) => set((/**@type {State} */ state) => ({ ...state, photoCount })),
+  setPhotoCount: (photoCount) => set((/**@type {Store} */ store) => ({ ...store, photoCount })),
   /*State for photos */
   photos: [],
   isPhotosLoading: false,
   photosErrorMessage: '',
   getPhotos: async (count) => {
     try {
-      set(() => ({ isPhotosLoading: true }));
+      set((/**@type {Store} */ store) => ({ ...store, isPhotosLoading: true }));
       const endPoint = `photos?_start=0&_limit=${count}`;
       const response = await fetch(`${API_BASE_URL}/${endPoint}`);
       if (!response.ok) throw new Error('Photos not received');
@@ -27,9 +27,10 @@ export const usePhotos = create(/**@type {StateCreator} */ (set) => ({
       set(() => ({ photos: photosFromAPI }));
     } catch (/**@type {*}*/ error) {
       set(() => ({ photosErrorMessage: error.message }));
+    } finally {
+      set((/**@type {Store} */ store) => ({ ...store, isPhotosLoading: false }));
     };
-    set(() => ({ isPhotosLoading: false }));
   },
 
-  resetPhotos: () => set((/**@type {State} */ state) => ({ ...state, photos: [] })),
+  resetPhotos: () => set((/**@type {Store} */ store) => ({ ...store, photos: [] })),
 }));
