@@ -16,7 +16,7 @@ export const Photos = (props) => {
   return (
     <ul className={style.photos}>
       {photos.map((/**@type {object} */ photo) => (
-        <Card key={photo.id}
+        <Card.Photo key={photo.id}
           id={photo.id}
           name={photo.title}
           image={photo.thumbnailUrl}
