@@ -16,7 +16,7 @@ export const Todos = (props) => {
   return (
     <ul className={style.todos}>
       {todos.map((/**@type {object} */ todo) => (
-        <Card key={todo.id}
+        <Card.Todo key={todo.id}
           id={todo.id}
           name={todo.title}
         />
