@@ -1,0 +1,15 @@
+.nav {
+    display: flex;
+    font-size: 30px;
+    ul {
+      display: flex;
+      gap: 80px;
+    }
+    li {
+      display: inline;
+    }
+
+    li:hover {
+      color: blue;
+    }
+  }
