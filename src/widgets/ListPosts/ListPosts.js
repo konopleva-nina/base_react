@@ -3,7 +3,7 @@ import { usePosts } from 'shared/hooks';
 import { PostCounter, Posts } from 'features';
 import { Preloader } from 'shared/ui/Preloader';
 import { useEffect } from 'react';
-
+import { PostForm } from 'features';
 
 /**
  * @function ListPosts
@@ -23,6 +23,7 @@ export const ListPosts = () => {
       <PostCounter />
       {!postsStore.postCount && <h2>Press the Up button to add photos</h2>}
       <Posts posts={postsStore.posts} />
+      <PostForm />
       <Preloader isActive={postsStore.isPostsLoading} />
     </div>
   );

@@ -1,7 +1,8 @@
 .listPosts {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     gap: 32px;
+    position: relative;
   }
