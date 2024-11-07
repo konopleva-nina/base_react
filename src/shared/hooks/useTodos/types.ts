@@ -10,11 +10,18 @@ export type TodosStore = {
   todoCount: number;
   setTodoCount: (todoCount: number) => void;
   /*State for todos */
-  todos: TodoFromAPI[] | [];
   isTodosLoading: boolean;
+  todos: TodoFromAPI[] | [];
   todosErrorMessage: string;
   getTodos: (todoCount: number) => void;
   resetTodos: () => void;
+  /*State for todo */
+  isTodoLoading: boolean,
+  todo: TodoFromAPI | null;
+  todoErrorMessage: string;
+  getTodoById: (todoId: string) => void;
+  resetTodo: () => void;
 };
 
+export type SetterCallback = (store: TodosStore) => TodosStore;
 export type TodosStoreCreator = (set: Function) => TodosStore;

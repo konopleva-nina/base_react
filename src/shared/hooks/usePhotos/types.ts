@@ -7,15 +7,22 @@ export type PhotoFromAPI = {
 };
 
 export type PhotosStore = {
-  /*State for count */
+  /*Photo count state */
   photoCount: number;
   setPhotoCount: (photoCount: number) => void;
-  /*State for photos */
-  photos: PhotoFromAPI[] | [];
+  /*Photos state*/
   isPhotosLoading: boolean;
+  photos: PhotoFromAPI[] | [];
   photosErrorMessage: string;
   getPhotos: (photoCount: number) => void;
   resetPhotos: () => void;
+  /*Photo state */
+  isPhotoLoading: boolean;
+  photo: PhotoFromAPI | null;
+  photoErrorMessage: string;
+  getPhotoById: (photoId: string) => void;
+  resetPhoto: () => void;
 };
 
+export type SetterCallback = (store: PhotosStore) => PhotosStore;
 export type PhotosStoreCreator = (set: Function) => PhotosStore;
