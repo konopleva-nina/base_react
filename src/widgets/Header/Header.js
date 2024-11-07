@@ -1,5 +1,5 @@
 import style from './Header.module.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 /**
  * @typedef {import('./types').HeaderProps} HeaderProps
@@ -11,21 +11,37 @@ import { Link } from 'react-router-dom';
  */
 export const Header = (props) => {
   return (
-    <header>
-      <h1>{props.title}</h1>
+    <header className={style.header}>
+      <h1 className={style.title}>{props.title}</h1>
       <nav className={style.nav}>
         <ul>
-          <li>
-            <Link to={'/'}>Home</Link>
+          <li className={style.item}>
+            <NavLink to={'/'}
+              className={({ isActive }) => isActive ? style.active : ''}
+            >
+              Home
+            </NavLink>
           </li>
-          <li>
-            <Link to={'/photos'}>Gallery</Link>
+          <li className={style.item}>
+            <NavLink to={'/photos'}
+              className={({ isActive }) => isActive ? style.active : ''}
+            >
+              Gallery
+            </NavLink>
           </li>
-          <li>
-            <Link to={'/todos'}>Tasks</Link>
+          <li className={style.item}>
+            <NavLink to={'/todos'}
+              className={({ isActive }) => isActive ? style.active : ''}
+            >
+              Tasks
+            </NavLink>
           </li>
-          <li>
-            <Link to={'/posts'}>Posts</Link>
+          <li className={style.item}>
+            <NavLink to={'/posts'}
+              className={({ isActive }) => isActive ? style.active : ''}
+            >
+              Posts
+            </NavLink>
           </li>
         </ul>
       </nav>
