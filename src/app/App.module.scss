@@ -2,7 +2,8 @@
   margin: 0;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 
@@ -19,19 +20,4 @@ a {
   align-items: center;
   color: #fff;
   background-color: #282c34;
-  .nav {
-    display: flex;
-    font-size: 30px;
-    ul {
-      display: flex;
-      gap: 80px;
-    }
-    li {
-      display: inline;
-    }
-
-    li:hover {
-      color: blue;
-    }
-  }
 }
