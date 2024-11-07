@@ -1,15 +1,37 @@
-.nav {
-    display: flex;
-    font-size: 30px;
-    ul {
-      display: flex;
-      gap: 80px;
-    }
-    li {
-      display: inline;
-    }
+.header {
+  width: 100%;
+  background: rgb(40, 35, 92);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
-    li:hover {
-      color: blue;
-    }
+.title {
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  font-size: 30px;
+  ul {
+    display: flex;
+    gap: 80px;
   }
+  .item {
+    display: inline;
+  }
+
+  .item:hover {
+    color: blue;
+  }
+
+  .active {
+    color: blue;
+    text-decoration: underline;
+    cursor: default;
+  }
+}
