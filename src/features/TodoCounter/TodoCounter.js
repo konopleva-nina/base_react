@@ -1,5 +1,5 @@
 import { Counter } from 'entities/index';
-import { useTodos } from 'shared/hooks';
+import { useTodos } from 'shared/stores';
 
 /**
  * @function TodoCounter
