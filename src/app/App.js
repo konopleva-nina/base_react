@@ -1,7 +1,7 @@
 import style from './App.module.scss';
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { usePhotos, usePosts, useTodos } from 'shared/hooks';
+import { usePhotos, usePosts, useTodos } from 'shared/stores';
 import { HomePage, PhotoPage, PhotosPage, PostPage, PostsPage, TodoPage, TodosPage } from 'pages';
 import { Header } from 'widgets';
 

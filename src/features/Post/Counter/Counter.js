@@ -1,15 +1,15 @@
-import { Counter } from 'entities/index';
-import { usePosts } from 'shared/hooks';
+import { Counter as UiCounter } from 'entities/index';
+import { usePosts } from 'shared/stores';
 
 /**
  * @function PostCounter
  * @returns {JSX.Element}
  */
 
-export const PostCounter = () => {
+export const Counter = () => {
   const postsStore = usePosts();
   return (
-    <Counter
+    <UiCounter
       name={'Posts count'}
       minCount = {4}
       count={postsStore.postCount}

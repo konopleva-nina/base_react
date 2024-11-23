@@ -5,7 +5,7 @@
  * @returns {number}
  */
 
-const getRandomInt = (/**@type {Number}*/ min, /**@type {Number}*/ max) => (
+export const getRandomInt = (/**@type {Number}*/ min, /**@type {Number}*/ max) => (
   Math.floor(Math.random() * (max - min + 1) + min)
 );
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import style from './Tasks.module.scss';
-import { useTodos } from 'shared/hooks';
+import { useTodos } from 'shared/stores';
 import { Todos, TodoCounter } from 'features';
 import { Preloader } from 'shared/ui/Preloader';
 

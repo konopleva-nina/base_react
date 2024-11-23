@@ -1,7 +1,7 @@
 import style from './Gallery.module.scss';
 import { PhotoCounter, Photos } from 'features';
 import { useEffect } from 'react';
-import { usePhotos } from 'shared/hooks';
+import { usePhotos } from 'shared/stores';
 import { Preloader } from 'shared/ui/Preloader';
 
 /**
