@@ -1,4 +1,4 @@
-import { usePhotos } from 'shared/hooks';
+import { usePhotos } from 'shared/stores';
 import { Counter } from 'entities/index';
 
 /**
