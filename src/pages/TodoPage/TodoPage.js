@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useTodos } from 'shared/hooks';
+import { useTodos } from 'shared/stores';
 import { Preloader } from 'shared/ui/Preloader';
 
 /**

@@ -1,0 +1,24 @@
+.postPage {
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(230, 226, 226, 0.7);
+    background: #28235c;
+    position: relative;
+    width: 600px;
+    border-radius: 8px;
+    margin-top: 32px;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    line-height: 1.5;
+
+    .title {
+      font-size: 30px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+  }
