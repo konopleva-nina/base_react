@@ -1,0 +1,1 @@
+export { RightSquareOutlined } from './RightSquareOutlined';
