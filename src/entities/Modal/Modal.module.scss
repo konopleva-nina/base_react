@@ -1,0 +1,44 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+
+  .wrapper {
+    position: relative;
+    padding: 20px 30px;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: #28235c;
+
+    .buttons {
+      display: flex;
+      justify-content: end;
+    }
+
+    .close {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: -28px;
+      right: -28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(215, 210, 210);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background: rgb(240, 235, 235);
+      }
+    }
+  }
+}
