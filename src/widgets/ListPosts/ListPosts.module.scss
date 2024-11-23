@@ -6,3 +6,10 @@
     gap: 32px;
     position: relative;
   }
+
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 20px;
+  }
